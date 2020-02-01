@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2019/11/07/hello-world/"/>
+      <url>/2019/11/07/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>study of neety in action</title>
+      <link href="/2019/10/29/study/netty/netty-in-action-note/"/>
+      <url>/2019/10/29/study/netty/netty-in-action-note/</url>
+      
+        <content type="html"><![CDATA[<h1 id="cpt1-Netty-异步和事件驱动"><a href="#cpt1-Netty-异步和事件驱动" class="headerlink" title="cpt1 Netty - 异步和事件驱动"></a>cpt1 Netty - 异步和事件驱动</h1><h2 id="Java网络编程"><a href="#Java网络编程" class="headerlink" title="Java网络编程"></a>Java网络编程</h2><h3 id="Java-BIO"><a href="#Java-BIO" class="headerlink" title="Java BIO"></a>Java BIO</h3><pre><code>以字符流和字节流作为基础，IO的操作都是阻塞式的，当有多个客户端进行连接的时候，需要使用多个线程去处理连接、数据应答操作。</code></pre><h3 id="Java-NIO"><a href="#Java-NIO" class="headerlink" title="Java NIO"></a>Java NIO</h3><pre><code>Java提供了非阻塞的IO支持。其中，Selector（选择器）是其实现的关键。它使用了事件通知API以确定在一组连接中有哪些已经就绪能进行IO操作，这一设计使得可以在少量线程的情况下处理大量的连接。</code></pre><h3 id="Netty-核心组件"><a href="#Netty-核心组件" class="headerlink" title="Netty 核心组件"></a>Netty 核心组件</h3><h4 id="Channel"><a href="#Channel" class="headerlink" title="Channel"></a>Channel</h4><pre><code>Java NIO的一个基本构造，连接中数据读取和写入的载体。</code></pre><h4 id="回调"><a href="#回调" class="headerlink" title="回调"></a>回调</h4><pre><code>操作完成后通知相关方最常见的放式</code></pre><h4 id="Future"><a href="#Future" class="headerlink" title="Future"></a>Future</h4><pre><code>提供了另一种在操作完成时通知应用程序并提供结果访问的放式。Netty实现了ChannelFuture用于在执行异步操作时使用。</code></pre><h4 id="事件和ChannelHandler"><a href="#事件和ChannelHandler" class="headerlink" title="事件和ChannelHandler"></a>事件和ChannelHandler</h4>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>study of Netty imooc class</title>
+      <link href="/2019/10/29/study/netty/netty-imooc-class/"/>
+      <url>/2019/10/29/study/netty/netty-imooc-class/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Netty组件"><a href="#Netty组件" class="headerlink" title="Netty组件"></a>Netty组件</h2><p>服务端：</p><ol><li>端监听端口<br> NioEventLoop，NIO事件循环，主要包括新连接接入、连接数据流的读写</li><li>接收新连接<br> Channel，新用户的连接在NIO中模型是Channel，Neety中封装为自定义的Channel，数据的读写都在Channel中进行，是Socket的抽象</li><li>接收客户端数据<br> ByteBuf，用于和底层数据流通讯</li><li>处理业务逻辑<br> ChannelHandler，处理业务逻辑，包括拆封数据包，进行Java对象的转换。一系列的逻辑处理经过一个Pipline进行处理，内置多个ChannelHandler</li><li>发送数据</li></ol><h3 id="NioEventLoop"><a href="#NioEventLoop" class="headerlink" title="NioEventLoop"></a>NioEventLoop</h3><h3 id="Channel"><a href="#Channel" class="headerlink" title="Channel"></a>Channel</h3>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>study of java collections</title>
+      <link href="/2019/10/28/study/java/collections/"/>
+      <url>/2019/10/28/study/java/collections/</url>
+      
+        <content type="html"><![CDATA[<h2 id="List-Set-Map"><a href="#List-Set-Map" class="headerlink" title="List, Set, Map"></a>List, Set, Map</h2><p>List是一种线性数据结构，Set一般是指没有重复的集合，而Map是键值对的存储，通过Key找到其对应的唯一Value</p><h3 id="List"><a href="#List" class="headerlink" title="List"></a>List</h3><p>List主要有ArrayList和LinkedList。</p><p>ArrayList的内部实现形式是数组，适用于偏重随机查找，较少插入、删除操作的场景，LinkedList内部实现是双向链表，适用于偏重较多头尾节点删除插入而较少随机查找访问的操作场景。</p><p>两者在指定位置插入、删除数据的操作事件复杂度一致。两者均为线程不安全。vector也为线性结构，它的每个方法都是同步的，故vector是线程安全的，但单线程操作时会因为同步锁的开销消耗大量资源。</p><h3 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h3><h3 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h3>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Java Collection </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>page</title>
+      <link href="/2019/10/28/about/me/"/>
+      <url>/2019/10/28/about/me/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
+</search>
