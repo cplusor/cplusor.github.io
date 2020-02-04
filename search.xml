@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>极客学院算法训练营第16课学习笔记</title>
+      <link href="/2020/02/04/study/algorithm_class_in_geektime/class16/"/>
+      <url>/2020/02/04/study/algorithm_class_in_geektime/class16/</url>
+      
+        <content type="html"><![CDATA[<h2 id="为什么需要位运算"><a href="#为什么需要位运算" class="headerlink" title="为什么需要位运算"></a>为什么需要位运算</h2><ul><li>目前数字在计算机中就是以二进制存储的</li></ul><h2 id="位运算符"><a href="#位运算符" class="headerlink" title="位运算符"></a>位运算符</h2><table><thead><tr><th align="center">符号</th><th align="center">名称</th><th align="center">作用</th><th align="center">示例</th></tr></thead><tbody><tr><td align="center">&lt;&lt;</td><td align="center">左移符号</td><td align="center">将数字二进制符号向左移动一位，最右端多出的数字位补0</td><td align="center">(0011)b &lt;&lt; 1 = (0110)b</td></tr><tr><td align="center">&gt;&gt;</td><td align="center">右移符号</td><td align="center">将数字二进制符号向右移动一位。 *注1</td><td align="center">根据逻辑右移和算数右移有不同，详见注1说明</td></tr><tr><td align="center">|</td><td align="center">或运算符</td><td align="center">将两个数字二级制符号按位进行比较运算，若两个数字同一位中至少有一个1则该位运算结果为1，否则为0</td><td align="center">(0011)b | (1010)b = (1011)b</td></tr><tr><td align="center">&amp;</td><td align="center">与运算符</td><td align="center">将两个数字二级制符号按位进行比较运算，若两个数字同一位中均为1则该位运算结果为1，否则为0</td><td align="center">(0011)b &amp; (1010)b = (0010)b</td></tr><tr><td align="center">~</td><td align="center">取反运算符</td><td align="center">将数字二级制符号每一位0变成1，1变成0</td><td align="center">~(0011)b = (1100)b</td></tr><tr><td align="center">^</td><td align="center">异或运算符</td><td align="center">两个数字按位运算，若相同则结果为0，不同为1</td><td align="center">(0011)b ^ (1010)b = (1001)b</td></tr></tbody></table><h3 id="异或"><a href="#异或" class="headerlink" title="异或"></a>异或</h3><p>异或的运算规则是相同得0，不同得1，其有一些特点，可以在使用中运用。</p><ul><li>x^0=x， 任何数x与0异或保持不变</li><li>x^(<del>0)=</del>x， 任何数x与二进制位符号全为1的数进行异或运算，结果与x按位取反结果相同</li><li>x^(<del>x)=(</del>0)， 任何数x与其按位取反的数进行异或运算，结果得到的数二进制符号全为1</li><li>x^x=0， 任何数x与自己进行异或运算，结果为0</li><li>c=a^b -&gt; a^c=b, b^c=a， 若数a和数b进行异或运算得到数c，则数c和数a异或可得数b，数c和数b异或可得数a</li><li>a^b^c=a^(b^c)=(a^b)^c， 异或运算具有结合律</li></ul><h2 id="常用二进制应用"><a href="#常用二进制应用" class="headerlink" title="常用二进制应用"></a>常用二进制应用</h2><ul><li>将x最右边的n为清零：x&amp;(~0&lt;&lt;n)</li><li>获取x的第n位值（0或者1）：(x&gt;&gt;n)&amp;1</li><li>获取x的第n位的幂值：x&amp;(x&lt;&lt;(n-1))</li><li>仅将第n为置为1：x|(1&lt;&lt;n)</li><li>仅将第n位置为0：x&amp;(~(1&lt;&lt;n))</li><li>将x最高位至第n位（含）清零：x&amp;((1&lt;&lt;n)-1)</li><li>将第n位至第0位（含）清零：x&amp;(~((1&lt;&lt;(n+1))-1))</li><li>清零最低位的1：x=x&amp;(x-1)</li><li>得到最低位的1：x&amp;(-x)</li></ul><h4 id="注1"><a href="#注1" class="headerlink" title="注1"></a>注1</h4><ul><li>逻辑右移：不考虑符号位，右移一位，左边补零<ul><li>例：(0011)b &gt;&gt; 1 = (0001)b; (1100)b &gt;&gt; 1 = (0110)b</li></ul></li><li>算术右移：需要考虑符号位，右移一位，若符号位为1，就在左边补1，否则，就补0<ul><li>例：(0011)b &gt;&gt; 1 = (0001)b; (1100)b &gt;&gt; 1 = (1110)b</li></ul></li><li>在C++中，由编译器判断是进行逻辑右移还是算术右移。若数据类型为usigned，则进行逻辑右移，若数据类型是signed，则进行算术右移</li><li>在Java中，逻辑右移有单独的符号 <code>&gt;&gt;&gt;</code></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 极客学院算法训练营学习记录 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 课堂笔记 </tag>
+            
+            <tag> 算法 </tag>
+            
+            <tag> 学习 </tag>
+            
+            <tag> 位运算 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello World</title>
       <link href="/2019/11/07/hello-world/"/>
       <url>/2019/11/07/hello-world/</url>
